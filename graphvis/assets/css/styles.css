@@ -22,6 +22,7 @@ h1 {
     background-image: url('assets/images/sprite.png');  /* Der Sprite mit allen Frames */
     background-position: 0 0;
     background-size: 4800px 200px;  /* Gesamte Breite des Sprites (24 Bilder) */
+    will-change: background-position; /* Verbesserung der Performance */
 }
 
 .controls {
