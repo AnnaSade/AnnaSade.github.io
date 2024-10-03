@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aufgabe 1 – Interaktive Scheibe</title>
-    <link rel="stylesheet" href="assets/css/styles.css">  
+    <title>Interaktive Scheibe mit CSS-Sprites</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    <h1>Interaktiv animierte Scheibe</h1>
+    <h1>Interaktive Scheibe mit CSS-Sprites</h1>
     
     <div class="container">
-        <img id="rotatingWheel" src="assets/images/wheel-0.png" alt="Rotierende Scheibe" style="max-width: 300px; max-height: 200px;">
-
+        <div id="rotatingWheel" class="wheel"></div> <!-- Verwende ein div für das Sprite -->
     </div>
 
-
-    <script src="assets/js/task01.js"></script>  
+    <script src="assets/js/task01.js"></script>
 </body>
 </html>
