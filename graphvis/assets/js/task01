@@ -1,24 +1,24 @@
 // START Aufgabe_1
 
-let currentAngle = 0;  // Aktueller Winkel der Scheibe
+let currentImageIndex = 0;  // Aktuelles Bild (Index von 0 bis 23)
 let isAutoRotating = false;  // Status für automatisches Drehen
 let autoRotateInterval = null;  // Intervall für das automatische Drehen
 
-// Funktion zum Aktualisieren des Bildes basierend auf dem aktuellen Winkel
+// Funktion zum Aktualisieren des Bildes basierend auf dem aktuellen Bildindex
 function updateWheelImage() {
     const wheelImage = document.getElementById("rotatingWheel");
-    wheelImage.src = `assets/images/wheel-${currentAngle}.png`;  // Bild aktualisieren
+    wheelImage.src = `assets/images/wheel-${currentImageIndex}.png`;  // Bild aktualisieren
 }
 
-// Funktion zum Drehen nach links (15 Grad zurück)
+// Funktion zum Drehen nach links (Index verringern)
 function rotateLeft() {
-    currentAngle = (currentAngle - 15 + 360) % 360;  // Winkel anpassen
+    currentImageIndex = (currentImageIndex - 1 + 24) % 24;  // Index in 24er Schleife
     updateWheelImage();  // Bild aktualisieren
 }
 
-// Funktion zum Drehen nach rechts (15 Grad vorwärts)
+// Funktion zum Drehen nach rechts (Index erhöhen)
 function rotateRight() {
-    currentAngle = (currentAngle + 15) % 360;  // Winkel anpassen
+    currentImageIndex = (currentImageIndex + 1) % 24;  // Index in 24er Schleife
     updateWheelImage();  // Bild aktualisieren
 }
 
