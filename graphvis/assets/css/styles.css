@@ -16,10 +16,12 @@ h1 {
     height: 50px;                
 }
 
-img {
-    width: 100%;                    
-    height: auto;   
-    max-height: 50px;               
+.wheel {
+    width: 200px;   /* Breite eines einzelnen Frames */
+    height: 200px;  /* Höhe eines einzelnen Frames */
+    background-image: url('assets/images/sprite.png');  /* Der Sprite mit allen Frames */
+    background-position: 0 0;
+    background-size: 4800px 200px;  /* Gesamte Breite des Sprites (24 Bilder) */
 }
 
 .controls {
@@ -31,3 +33,4 @@ button {
     margin: 5px;                   
     font-size: 16px;                
 }
+
