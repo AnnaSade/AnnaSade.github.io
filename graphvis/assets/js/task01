@@ -1,0 +1,52 @@
+// START Aufgabe_1
+
+let currentAngle = 0;  // Aktueller Winkel der Scheibe
+let isAutoRotating = false;  // Status für automatisches Drehen
+let autoRotateInterval = null;  // Intervall für das automatische Drehen
+
+// Funktion zum Aktualisieren des Bildes basierend auf dem aktuellen Winkel
+function updateWheelImage() {
+    const wheelImage = document.getElementById("rotatingWheel");
+    wheelImage.src = `assets/images/wheel-${currentAngle}.png`;  // Bild aktualisieren
+}
+
+// Funktion zum Drehen nach links (15 Grad zurück)
+function rotateLeft() {
+    currentAngle = (currentAngle - 15 + 360) % 360;  // Winkel anpassen
+    updateWheelImage();  // Bild aktualisieren
+}
+
+// Funktion zum Drehen nach rechts (15 Grad vorwärts)
+function rotateRight() {
+    currentAngle = (currentAngle + 15) % 360;  // Winkel anpassen
+    updateWheelImage();  // Bild aktualisieren
+}
+
+// Funktion für automatisches Drehen
+function toggleAutoRotate() {
+    if (isAutoRotating) {
+        clearInterval(autoRotateInterval);  // Automatisches Drehen stoppen
+        isAutoRotating = false;
+    } else {
+        autoRotateInterval = setInterval(rotateRight, 100);  // Alle 100 ms nach rechts drehen
+        isAutoRotating = true;
+    }
+}
+
+// Event Listener für die Buttons
+document.getElementById("rotateLeft").addEventListener("click", rotateLeft);
+document.getElementById("rotateRight").addEventListener("click", rotateRight);
+document.getElementById("toggleAutoRotate").addEventListener("click", toggleAutoRotate);
+
+// Event Listener für die Tastatur
+document.addEventListener("keydown", function(event) {
+    if (event.key === "a") {
+        toggleAutoRotate();  // Automatisches Drehen starten oder stoppen
+    } else if (event.key === "l") {
+        rotateLeft();  // Nach links drehen
+    } else if (event.key === "r") {
+        rotateRight();  // Nach rechts drehen
+    }
+});
+
+// END Aufgabe_1
