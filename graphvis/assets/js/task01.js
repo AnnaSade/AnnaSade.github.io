@@ -1,13 +1,14 @@
 const totalFrames = 24;  // Anzahl der Frames im Sprite
 const frameWidth = 200;  // Breite jedes einzelnen Frames
-let currentFrame = 0;  // Start mit dem ersten Frame
+let currentFrame = 0;  // Start bei Frame 0
 let isAutoRotating = false;  // Status für automatisches Drehen
+let autoRotateInterval = null;  // Intervall für das automatische Drehen
 
 // Funktion zum Aktualisieren der Hintergrundposition basierend auf dem aktuellen Frame
 function updateWheelFrame() {
     const wheel = document.getElementById('rotatingWheel');
     const position = -currentFrame * frameWidth;  // Berechne die neue Hintergrundposition
-    wheel.style.backgroundPosition = `${position}px 0`;  // Setze die Hintergrundposition
+    wheel.style.backgroundPosition = `${position}px 0`;  // Hintergrundposition setzen
 }
 
 // Funktion zum Drehen nach links (Frame verringern)
@@ -24,17 +25,12 @@ function rotateRight() {
 
 // Funktion für automatisches Drehen
 function toggleAutoRotate() {
-    isAutoRotating = !isAutoRotating;  // Status umschalten
     if (isAutoRotating) {
-        requestAnimationFrame(rotateRight);  // Starte die Animation
-    }
-}
-
-// Funktion für die Animation bei automatischer Drehung
-function autoRotate() {
-    if (isAutoRotating) {
-        rotateRight();  // Drehe nach rechts
-        requestAnimationFrame(autoRotate);  // Nächsten Frame anfordern
+        clearInterval(autoRotateInterval);  // Automatisches Drehen stoppen
+        isAutoRotating = false;
+    } else {
+        autoRotateInterval = setInterval(rotateRight, 100);  // Alle 100 ms Frame wechseln
+        isAutoRotating = true;
     }
 }
 
@@ -42,9 +38,6 @@ function autoRotate() {
 document.addEventListener('keydown', function(event) {
     if (event.key === 'a') {
         toggleAutoRotate();  // Automatisches Drehen starten/stoppen
-        if (isAutoRotating) {
-            requestAnimationFrame(autoRotate);  // Starte die Animation
-        }
     } else if (event.key === 'l') {
         rotateLeft();  // Nach links drehen
     } else if (event.key === 'r') {
