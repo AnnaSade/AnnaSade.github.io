@@ -1,7 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aufgabe 1 – Interaktive Scheibe</title>
+    <link rel="stylesheet" href="assets/css/styles.css">  
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <h1>Interaktiv animierte Scheibe</h1>
+    
+    <div class="container">
+        <img id="rotatingWheel" src="assets/images/wheel-0.png" alt="Rotierende Scheibe">  <!-- Foto der Scheibe -->
+    </div>
+
+    <div class="controls">  <!-- Steuerbuttons -->
+        <button id="rotateLeft">Drehe nach links</button>
+        <button id="rotateRight">Drehe nach rechts</button>
+        <button id="toggleAutoRotate">Automatisch Drehen (A)</button>
+    </div>
+
+    <script src="assets/js/task01.js"></script>  
 </body>
 </html>
