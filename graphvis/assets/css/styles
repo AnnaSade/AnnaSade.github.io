@@ -12,8 +12,8 @@ h1 {
 
 .container {
     margin: 20px auto;              
-    width: auto;                  
-    height: auto;                
+    width: 200px;                  
+    height: 200px;                
 }
 
 img {
