@@ -33,11 +33,6 @@ function toggleAutoRotate() {
     }
 }
 
-// Event Listener für die Buttons
-document.getElementById("rotateLeft").addEventListener("click", rotateLeft);
-document.getElementById("rotateRight").addEventListener("click", rotateRight);
-document.getElementById("toggleAutoRotate").addEventListener("click", toggleAutoRotate);
-
 // Event Listener für die Tastatur
 document.addEventListener("keydown", function(event) {
     if (event.key === "a") {
