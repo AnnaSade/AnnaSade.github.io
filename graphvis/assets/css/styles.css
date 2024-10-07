@@ -28,7 +28,7 @@ h1 {
 .orange {
     width: 200px;  /* Breite eines einzelnen Orange-Frames */
     height: 200px; /* Höhe eines einzelnen Orange-Frames */
-    background-image: url('assets/images/Orange-1.png'); /* Startbild */
+    background-image: url('assets/images/Orange-1.jpg'); /* Startbild */
     background-size: 4800px 200px;
     display: block;
     will-change: background-image; /* Verbesserung der Performance */
