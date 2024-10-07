@@ -5,6 +5,8 @@ let currentImageIndexWheel = 0;  // Aktuelles Bild des Wheel (Index von 0 bis 23
 let isAutoRotatingWheel = false;  // Status für automatisches Drehen des Wheel
 let autoRotateIntervalWheel = null;  // Intervall für das automatische Drehen des Wheel
 
+
+
 // Variablen für die Orange
 let currentImageIndexOrange = 1;  // Start bei Bild 1 (Index von 1 bis 8)
 const totalFramesOrange = 8;  // Anzahl der Orange-Bilder
@@ -41,7 +43,7 @@ function toggleAutoRotateWheel() {
 // Funktion zum Aktualisieren des Orange-Bildes basierend auf dem aktuellen Bildindex
 function updateOrangeImage() {
     const orangeImage = document.getElementById("bouncingOrange");
-    orangeImage.src = `assets/images/Orange-${currentImageIndexOrange}.png`;  // Bild aktualisieren
+    orangeImage.src = `assets/images/Orange-${currentImageIndexOrange}.jpg`;  // Bild aktualisieren
 }
 
 // Funktion zum Rückwärtsdrehen der Orange (Index verringern)
