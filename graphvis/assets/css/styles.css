@@ -12,8 +12,8 @@ h1 {
 
 .container {
     margin: 20px auto;              
-    width: 50px;                  
-    height: 50px;                
+    width: 75px;                  
+    height: 75px;                
 }
 
 .wheel {
@@ -26,10 +26,11 @@ h1 {
 }
 
 .orange {
-    width: 100px;  /* Breite eines einzelnen Orange-Frames */
-    height: 100px; /* Höhe eines einzelnen Orange-Frames */
+    width: 200px;  /* Breite eines einzelnen Orange-Frames */
+    height: 200px; /* Höhe eines einzelnen Orange-Frames */
     background-image: url('assets/images/Orange-1.png'); /* Startbild */
-    background-size: cover;  /* Bildgröße anpassen */
+    background-size: 4800px 200px;
+    display: block;
     will-change: background-image; /* Verbesserung der Performance */
 }
 
