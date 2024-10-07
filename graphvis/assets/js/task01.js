@@ -1,46 +1,82 @@
 // START Aufgabe_1
 
-let currentImageIndex = 0;  // Aktuelles Bild (Index von 0 bis 23)
-let isAutoRotating = false;  // Status für automatisches Drehen
-let autoRotateInterval = null;  // Intervall für das automatische Drehen
+// Variablen für das Wheel
+let currentImageIndexWheel = 0;  // Aktuelles Bild des Wheel (Index von 0 bis 23)
+let isAutoRotatingWheel = false;  // Status für automatisches Drehen des Wheel
+let autoRotateIntervalWheel = null;  // Intervall für das automatische Drehen des Wheel
 
-// Funktion zum Aktualisieren des Bildes basierend auf dem aktuellen Bildindex
+// Variablen für die Orange
+let currentImageIndexOrange = 1;  // Start bei Bild 1 (Index von 1 bis 8)
+const totalFramesOrange = 8;  // Anzahl der Orange-Bilder
+
+// Funktion zum Aktualisieren des Wheel-Bildes basierend auf dem aktuellen Bildindex
 function updateWheelImage() {
     const wheelImage = document.getElementById("rotatingWheel");
-    wheelImage.src = `assets/images/wheel-${currentImageIndex}.png`;  // Bild aktualisieren
+    wheelImage.src = `assets/images/wheel-${currentImageIndexWheel}.png`;  // Bild aktualisieren
 }
 
-// Funktion zum Drehen nach links (Index verringern)
+// Funktion zum Drehen des Wheels nach links (Index verringern)
 function rotateLeft() {
-    currentImageIndex = (currentImageIndex - 1 + 24) % 24;  // Index in 24er Schleife
+    currentImageIndexWheel = (currentImageIndexWheel - 1 + 24) % 24;  // Index in 24er Schleife
     updateWheelImage();  // Bild aktualisieren
 }
 
-// Funktion zum Drehen nach rechts (Index erhöhen)
+// Funktion zum Drehen des Wheels nach rechts (Index erhöhen)
 function rotateRight() {
-    currentImageIndex = (currentImageIndex + 1) % 24;  // Index in 24er Schleife
+    currentImageIndexWheel = (currentImageIndexWheel + 1) % 24;  // Index in 24er Schleife
     updateWheelImage();  // Bild aktualisieren
 }
 
-// Funktion für automatisches Drehen
-function toggleAutoRotate() {
-    if (isAutoRotating) {
-        clearInterval(autoRotateInterval);  // Automatisches Drehen stoppen
-        isAutoRotating = false;
+// Funktion für automatisches Drehen des Wheels
+function toggleAutoRotateWheel() {
+    if (isAutoRotatingWheel) {
+        clearInterval(autoRotateIntervalWheel);  // Automatisches Drehen stoppen
+        isAutoRotatingWheel = false;
     } else {
-        autoRotateInterval = setInterval(rotateRight, 100);  // Alle 100 ms nach rechts drehen
-        isAutoRotating = true;
+        autoRotateIntervalWheel = setInterval(rotateRight, 100);  // Alle 100 ms nach rechts drehen
+        isAutoRotatingWheel = true;
     }
+}
+
+// Funktion zum Aktualisieren des Orange-Bildes basierend auf dem aktuellen Bildindex
+function updateOrangeImage() {
+    const orangeImage = document.getElementById("bouncingOrange");
+    orangeImage.src = `assets/images/Orange-${currentImageIndexOrange}.png`;  // Bild aktualisieren
+}
+
+// Funktion zum Rückwärtsdrehen der Orange (Index verringern)
+function bounceBack() {
+    currentImageIndexOrange = (currentImageIndexOrange - 1 + totalFramesOrange) % totalFramesOrange || totalFramesOrange;
+    updateOrangeImage();  // Bild aktualisieren
+}
+
+// Funktion zum Vorwärtsdrehen der Orange (Index erhöhen)
+function bounceForward() {
+    currentImageIndexOrange = (currentImageIndexOrange % totalFramesOrange) + 1;
+    updateOrangeImage();  // Bild aktualisieren
 }
 
 // Event Listener für die Tastatur
 document.addEventListener("keydown", function(event) {
-    if (event.key === "a") {
-        toggleAutoRotate();  // Automatisches Drehen starten oder stoppen
-    } else if (event.key === "l") {
-        rotateLeft();  // Nach links drehen
-    } else if (event.key === "r") {
-        rotateRight();  // Nach rechts drehen
+    switch (event.key) {
+        // Steuerung für das Wheel
+        case "a":
+            toggleAutoRotateWheel();  // Automatisches Drehen des Wheels
+            break;
+        case "l":
+            rotateLeft();  // Nach links drehen
+            break;
+        case "r":
+            rotateRight();  // Nach rechts drehen
+            break;
+        
+        // Steuerung für die Orange
+        case "b":
+            bounceBack();  // Rückwärts bewegen
+            break;
+        case "f":
+            bounceForward();  // Vorwärts bewegen
+            break;
     }
 });
 

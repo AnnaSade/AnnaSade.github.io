@@ -16,11 +16,23 @@ h1 {
     height: 50px;                
 }
 
-img {
-    width: 100%;                    
-    height: auto;   
-    max-height: 50px;               
+.wheel {
+    width: 200px;
+    height: 200px;
+    background-image: url('assets/images/wheel-0.png');
+    background-position: 0 0;
+    background-size: 4800px 200px;
+    will-change: background-position;
 }
+
+.orange {
+    width: 100px;  /* Breite eines einzelnen Orange-Frames */
+    height: 100px; /* Höhe eines einzelnen Orange-Frames */
+    background-image: url('assets/images/Orange-1.png'); /* Startbild */
+    background-size: cover;  /* Bildgröße anpassen */
+    will-change: background-image; /* Verbesserung der Performance */
+}
+
 
 .controls {
     margin: 20px auto;              
