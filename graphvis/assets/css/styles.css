@@ -14,7 +14,7 @@ h1 {
     display: flex;
     justify-content: center; /* Zentriert die Elemente horizontal */
     align-items: center; /* Zentriert die Elemente vertikal */
-    gap: 40px; /* Abstand zwischen den Animationen */
+    gap: 100px; /* Abstand zwischen den Animationen */
 }
 
 #rotatingWheel, #bouncingOrange {

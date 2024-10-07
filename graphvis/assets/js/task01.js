@@ -10,6 +10,7 @@ let autoRotateIntervalWheel = null;  // Intervall für das automatische Drehen d
 // Variablen für die Orange
 let currentImageIndexOrange = 1;  // Start bei Bild 1 (Index von 1 bis 8)
 const totalFramesOrange = 8;  // Anzahl der Orange-Bilder
+let isAutoBouncing = false;
 
 // Funktion zum Aktualisieren des Wheel-Bildes basierend auf dem aktuellen Bildindex
 function updateWheelImage() {
@@ -58,8 +59,26 @@ function bounceForward() {
     updateOrangeImage();  // Bild aktualisieren
 }
 
+// Funktion für automatische Schleifen-Animation der Orange
+function autoBounce() {
+    if (isAutoBouncing) {
+        currentImageIndexOrange = (currentImageIndexOrange % totalFramesOrange) + 1; // Nächster Frame
+        updateOrangeImage();  // Bild aktualisieren
+        setTimeout(() => requestAnimationFrame(autoBounce), 200); // Nächsten Frame anfordern
+    }
+}
+
+// Funktion zum Starten/Stoppen der automatischen Schleife
+function toggleAutoBounce() {
+    isAutoBouncing = !isAutoBouncing;  // Status umschalten
+    if (isAutoBouncing) {
+        requestAnimationFrame(autoBounce);  // Start der Animation
+    }
+}
+
+
 // Event Listener für die Tastatur
-document.addEventListener("keydown", function(event) {
+document.addEventListener("keydown", function (event) {
     switch (event.key) {
         // Steuerung für das Wheel
         case "a":
@@ -71,13 +90,17 @@ document.addEventListener("keydown", function(event) {
         case "r":
             rotateRight();  // Nach rechts drehen
             break;
-        
+
         // Steuerung für die Orange
         case "b":
             bounceBack();  // Rückwärts bewegen
             break;
         case "f":
             bounceForward();  // Vorwärts bewegen
+            break;
+
+        case "c": // Automatische Schleife für Orange starten/stoppen
+            toggleAutoBounce();
             break;
     }
 });
