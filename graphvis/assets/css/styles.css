@@ -7,7 +7,7 @@ body {
 h1 {
     font-family: Arial, sans-serif; 
     font-size: 24px;                
-    margin-bottom: 50px;          
+    margin-bottom: 200px;          
 }
 
 .animation-container {
@@ -18,7 +18,7 @@ h1 {
 }
 
 #rotatingWheel, #bouncingOrange {
-    width: 150px; /* Optional: einheitliche Breite */
+    width: 250px; /* Optional: einheitliche Breite */
    /*height: 150px;  Höhe automatisch anpassen */
 }
 
