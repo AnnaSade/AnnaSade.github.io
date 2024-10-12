@@ -10,6 +10,23 @@ h1 {
     margin-bottom: 200px;          
 }
 
+.controls-description {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: left;
+    max-width: 400px;
+    margin: 0 auto 20px; /* Zentriere den Text und füge Abstand darunter hinzu */
+}
+
+.controls-description code {
+    font-family: monospace;
+    background-color: #f0f0f0;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+
 .animation-container {
     display: flex;
     justify-content: center; /* Zentriert die Elemente horizontal */
