@@ -26,7 +26,6 @@ h1 {
 
 .controls-description code {
     font-family: monospace;
-    background-color: #f0f0f0;
     padding: 2px 4px;
     border-radius: 3px;
 }
@@ -36,6 +35,7 @@ h1 {
     justify-content: center;
     align-items: center;
     gap: 30px; /* Abstand zwischen den Animationen */
+    margin-top: 50px; 
 }
 
 #rotatingWheel, #bouncingOrange {
