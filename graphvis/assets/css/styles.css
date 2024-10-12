@@ -45,3 +45,10 @@ h1 {
     max-width: 100%; /* Maximal die Breite des Containers ausnutzen */
     max-height: 100vh; /* Maximal die Höhe des Viewports nutzen */
 }
+
+.image-sources {
+    position: fixed;
+    bottom: 10px; 
+    right: 10px; 
+    font-size: 14px; 
+}
