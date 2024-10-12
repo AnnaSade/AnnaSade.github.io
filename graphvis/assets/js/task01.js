@@ -1,14 +1,14 @@
 // START Aufgabe_1
 
 // Variablen für das Wheel (CD)
-const totalFramesWheel = 24;  // Anzahl der Frames für das Wheel
-let currentImageIndexWheel = 0;  // Start mit dem ersten Bild
-let isAutoRotatingWheel = false;  // Status für automatisches Drehen
+const totalFramesWheel = 24;  
+let currentImageIndexWheel = 0;  
+let isAutoRotatingWheel = false;  
 
 // Variablen für die Orange
-const totalFramesOrange = 8;  // Anzahl der Frames für die Orange
-let currentImageIndexOrange = 1;  // Start bei Bild 1 (da die Bildnummern bei 1 beginnen)
-let isAutoBouncingOrange = false;  // Status für automatische Schleifen-Animation
+const totalFramesOrange = 8;  
+let currentImageIndexOrange = 1;  
+let isAutoBouncingOrange = false;  
 
 // Funktion zum Vorladen der Bilder
 function preloadImages(imagePaths) {
@@ -18,7 +18,7 @@ function preloadImages(imagePaths) {
     });
 }
 
-// Bildpfade für das Wheel und die Orange
+// Bildpfade für die CD und die Orange
 const wheelImages = Array.from({ length: totalFramesWheel }, (_, i) => `assets/images/wheel-${i}.png`);
 const orangeImages = Array.from({ length: totalFramesOrange }, (_, i) => `assets/images/Orange-${i + 1}.jpg`);
 
@@ -27,25 +27,25 @@ window.addEventListener('load', () => {
     preloadImages([...wheelImages, ...orangeImages]);
 });
 
-// Funktion zum Aktualisieren des Wheel-Bildes
+// Funktion zum Aktualisieren des CD-Bildes
 function updateWheelImage() {
     const wheelImage = document.getElementById("rotatingWheel");
     wheelImage.src = `assets/images/wheel-${currentImageIndexWheel}.png`;
 }
 
-// Funktion zum Drehen des Wheels (CD) nach links
+// Funktion zum Drehen der CD nach links
 function rotateWheelLeft() {
     currentImageIndexWheel = (currentImageIndexWheel - 1 + totalFramesWheel) % totalFramesWheel;
     updateWheelImage();
 }
 
-// Funktion zum Drehen des Wheels (CD) nach rechts
+// Funktion zum Drehen der CD nach rechts
 function rotateWheelRight() {
     currentImageIndexWheel = (currentImageIndexWheel + 1) % totalFramesWheel;
     updateWheelImage();
 }
 
-// Funktion für automatische Rotation des Wheels (CD)
+// Funktion für automatische Rotation der CD
 function toggleAutoRotateWheel() {
     isAutoRotatingWheel = !isAutoRotatingWheel;
     if (isAutoRotatingWheel) {
@@ -78,7 +78,7 @@ function bounceOrangeForward() {
     updateOrangeImage();
 }
 
-// Funktion für automatische Schleifen-Animation der Orange
+// Funktion für automatische Animation der Orange
 function toggleAutoBounceOrange() {
     isAutoBouncingOrange = !isAutoBouncingOrange;
     if (isAutoBouncingOrange) {

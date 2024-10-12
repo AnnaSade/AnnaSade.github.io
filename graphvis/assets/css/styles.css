@@ -6,13 +6,13 @@ body {
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    justify-content: flex-start; /* Startet den Inhalt oben */
+    justify-content: flex-start;
 }
 
 h1 {
     font-family: Arial, sans-serif;
     font-size: 24px;
-    margin: 20px 0 10px; /* Platz um die Überschrift */
+    margin: 20px 0 10px; 
 }
 
 .controls-description {
@@ -33,17 +33,17 @@ h1 {
 
 .animation-container {
     display: flex;
-    justify-content: center; /* Horizontale Zentrierung */
-    align-items: center; /* Vertikale Zentrierung im Container */
-    gap: 40px; /* Abstand zwischen den Animationen */
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* Abstand zwischen den Animationen */
 }
 
 #rotatingWheel, #bouncingOrange {
     width: 250px; 
-    height: auto; /* Höhe automatisch anpassen */
-    object-fit: contain; /* Beibehaltung der Proportionen */
-    max-width: 100%; /* Maximal die Breite des Containers ausnutzen */
-    max-height: 100vh; /* Maximal die Höhe des Viewports nutzen */
+    height: auto; 
+    object-fit: contain; 
+    max-width: 100%; 
+    max-height: 100vh; 
 }
 
 .image-sources {
