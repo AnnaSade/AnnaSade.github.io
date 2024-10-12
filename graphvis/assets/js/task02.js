@@ -59,10 +59,10 @@ const vertexShaderSource = `
     }
 `;
 
-// Fragment-Shader
+// Fragment-Shader (Schwarz)
 const fragmentShaderSource = `
     void main(void) {
-        gl_FragColor = vec4(0.0, 0.0, 1.0, 1.0);  // Blau
+        gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);  // Schwarz
     }
 `;
 
@@ -93,8 +93,8 @@ gl.vertexAttribPointer(coordinates, 2, gl.FLOAT, false, 0, 0);
 gl.enableVertexAttribArray(coordinates);
 
 // Hintergrundfarbe setzen
-gl.clearColor(1.0, 1.0, 1.0);  // Weiß
-gl.clear(gl.COLOR_BUFFER_BIT);
+gl.clearColor(1.0, 1.0, 1.0, 1.0);  // Weiß
+gl.clear(gl.COLOR_BUFFER_BIT);       // Leere den Farb-Puffer
 
 // Zeichnen der Geometrie
 gl.drawArrays(gl.LINE_LOOP, 0, vertices.length / 2);  // Verwende GL_LINE_LOOP für Linien
