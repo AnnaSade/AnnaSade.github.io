@@ -1,106 +1,118 @@
 // START Aufgabe_1
 
-// Variablen für das Wheel
-let currentImageIndexWheel = 0;  // Aktuelles Bild des Wheel (Index von 0 bis 23)
-let isAutoRotatingWheel = false;  // Status für automatisches Drehen des Wheel
-let autoRotateIntervalWheel = null;  // Intervall für das automatische Drehen des Wheel
-
-
+// Variablen für das Wheel (CD)
+const totalFramesWheel = 24;  // Anzahl der Frames für das Wheel
+let currentImageIndexWheel = 0;  // Start mit dem ersten Bild
+let isAutoRotatingWheel = false;  // Status für automatisches Drehen
 
 // Variablen für die Orange
-let currentImageIndexOrange = 1;  // Start bei Bild 1 (Index von 1 bis 8)
-const totalFramesOrange = 8;  // Anzahl der Orange-Bilder
-let isAutoBouncing = false;
+const totalFramesOrange = 8;  // Anzahl der Frames für die Orange
+let currentImageIndexOrange = 1;  // Start bei Bild 1 (da die Bildnummern bei 1 beginnen)
+let isAutoBouncingOrange = false;  // Status für automatische Schleifen-Animation
 
-// Funktion zum Aktualisieren des Wheel-Bildes basierend auf dem aktuellen Bildindex
+// Funktion zum Vorladen der Bilder
+function preloadImages(imagePaths) {
+    imagePaths.forEach(path => {
+        const img = new Image();
+        img.src = path;
+    });
+}
+
+// Bildpfade für das Wheel und die Orange
+const wheelImages = Array.from({ length: totalFramesWheel }, (_, i) => `assets/images/wheel-${i}.png`);
+const orangeImages = Array.from({ length: totalFramesOrange }, (_, i) => `assets/images/Orange-${i + 1}.jpg`);
+
+// Bilder beim Laden der Seite vorladen
+window.addEventListener('load', () => {
+    preloadImages([...wheelImages, ...orangeImages]);
+});
+
+// Funktion zum Aktualisieren des Wheel-Bildes
 function updateWheelImage() {
     const wheelImage = document.getElementById("rotatingWheel");
-    wheelImage.src = `assets/images/wheel-${currentImageIndexWheel}.png`;  // Bild aktualisieren
+    wheelImage.src = `assets/images/wheel-${currentImageIndexWheel}.png`;
 }
 
-// Funktion zum Drehen des Wheels nach links (Index verringern)
-function rotateLeft() {
-    currentImageIndexWheel = (currentImageIndexWheel - 1 + 24) % 24;  // Index in 24er Schleife
-    updateWheelImage();  // Bild aktualisieren
+// Funktion zum Drehen des Wheels (CD) nach links
+function rotateWheelLeft() {
+    currentImageIndexWheel = (currentImageIndexWheel - 1 + totalFramesWheel) % totalFramesWheel;
+    updateWheelImage();
 }
 
-// Funktion zum Drehen des Wheels nach rechts (Index erhöhen)
-function rotateRight() {
-    currentImageIndexWheel = (currentImageIndexWheel + 1) % 24;  // Index in 24er Schleife
-    updateWheelImage();  // Bild aktualisieren
+// Funktion zum Drehen des Wheels (CD) nach rechts
+function rotateWheelRight() {
+    currentImageIndexWheel = (currentImageIndexWheel + 1) % totalFramesWheel;
+    updateWheelImage();
 }
 
-// Funktion für automatisches Drehen des Wheels
+// Funktion für automatische Rotation des Wheels (CD)
 function toggleAutoRotateWheel() {
+    isAutoRotatingWheel = !isAutoRotatingWheel;
     if (isAutoRotatingWheel) {
-        clearInterval(autoRotateIntervalWheel);  // Automatisches Drehen stoppen
-        isAutoRotatingWheel = false;
-    } else {
-        autoRotateIntervalWheel = setInterval(rotateRight, 100);  // Alle 100 ms nach rechts drehen
-        isAutoRotatingWheel = true;
+        requestAnimationFrame(autoRotateWheel);
     }
 }
 
-// Funktion zum Aktualisieren des Orange-Bildes basierend auf dem aktuellen Bildindex
+function autoRotateWheel() {
+    if (isAutoRotatingWheel) {
+        rotateWheelRight();
+        setTimeout(() => requestAnimationFrame(autoRotateWheel), 100);
+    }
+}
+
+// Funktion zum Aktualisieren des Orange-Bildes
 function updateOrangeImage() {
     const orangeImage = document.getElementById("bouncingOrange");
-    orangeImage.src = `assets/images/Orange-${currentImageIndexOrange}.jpg`;  // Bild aktualisieren
+    orangeImage.src = `assets/images/Orange-${currentImageIndexOrange}.jpg`;
 }
 
-// Funktion zum Rückwärtsdrehen der Orange (Index verringern)
-function bounceBack() {
+// Funktion zum Rückwärtsdrehen der Orange
+function bounceOrangeBack() {
     currentImageIndexOrange = (currentImageIndexOrange - 1 + totalFramesOrange) % totalFramesOrange || totalFramesOrange;
-    updateOrangeImage();  // Bild aktualisieren
+    updateOrangeImage();
 }
 
-// Funktion zum Vorwärtsdrehen der Orange (Index erhöhen)
-function bounceForward() {
+// Funktion zum Vorwärtsdrehen der Orange
+function bounceOrangeForward() {
     currentImageIndexOrange = (currentImageIndexOrange % totalFramesOrange) + 1;
-    updateOrangeImage();  // Bild aktualisieren
+    updateOrangeImage();
 }
 
 // Funktion für automatische Schleifen-Animation der Orange
-function autoBounce() {
-    if (isAutoBouncing) {
-        currentImageIndexOrange = (currentImageIndexOrange % totalFramesOrange) + 1; // Nächster Frame
-        updateOrangeImage();  // Bild aktualisieren
-        setTimeout(() => requestAnimationFrame(autoBounce), 200); // Nächsten Frame anfordern
+function toggleAutoBounceOrange() {
+    isAutoBouncingOrange = !isAutoBouncingOrange;
+    if (isAutoBouncingOrange) {
+        requestAnimationFrame(autoBounceOrange);
     }
 }
 
-// Funktion zum Starten/Stoppen der automatischen Schleife
-function toggleAutoBounce() {
-    isAutoBouncing = !isAutoBouncing;  // Status umschalten
-    if (isAutoBouncing) {
-        requestAnimationFrame(autoBounce);  // Start der Animation
+function autoBounceOrange() {
+    if (isAutoBouncingOrange) {
+        bounceOrangeForward();
+        setTimeout(() => requestAnimationFrame(autoBounceOrange), 200);
     }
 }
-
 
 // Event Listener für die Tastatur
 document.addEventListener("keydown", function (event) {
     switch (event.key) {
-        // Steuerung für das Wheel
         case "a":
-            toggleAutoRotateWheel();  // Automatisches Drehen des Wheels
+            toggleAutoRotateWheel();
             break;
         case "l":
-            rotateLeft();  // Nach links drehen
+            rotateWheelLeft();
             break;
         case "r":
-            rotateRight();  // Nach rechts drehen
+            rotateWheelRight();
             break;
-
-        // Steuerung für die Orange
         case "b":
-            bounceBack();  // Rückwärts bewegen
+            bounceOrangeBack();
             break;
         case "f":
-            bounceForward();  // Vorwärts bewegen
+            bounceOrangeForward();
             break;
-
-        case "c": // Automatische Schleife für Orange starten/stoppen
-            toggleAutoBounce();
+        case "c":
+            toggleAutoBounceOrange();
             break;
     }
 });
