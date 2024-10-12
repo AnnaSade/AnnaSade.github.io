@@ -1,45 +1,16 @@
 // START Aufgabe 2
 
-// Vertex-Daten für den Katzenkopf
 const vertices = new Float32Array([
-    // Ohren
-    -0.5, 0.7,   // Linke Ohr-Spitze
-    -0.3, 1.0,   // Linke Ohr-Basis
-    -0.1, 0.7,   // Linke Ohr-Spitze
-    
-    0.5, 0.7,    // Rechte Ohr-Spitze
-    0.3, 1.0,    // Rechte Ohr-Basis
-    0.1, 0.7,    // Rechte Ohr-Spitze
-
-    // Kopf (Ellipse)
-    -0.6, 0.0,   // Linke Seite des Kopfes
-     0.6, 0.0,   // Rechte Seite des Kopfes
-     0.4, -0.4,  // Untere rechte Seite
-    -0.4, -0.4,  // Untere linke Seite
-     0.5, 0.4,   // Obere rechte Seite
-    -0.5, 0.4,   // Obere linke Seite
-
-    // Augen (2 Vertices pro Auge, 2 Augen)
-    -0.3, 0.2,   // Linkes Auge links
-    -0.1, 0.2,   // Linkes Auge rechts
-    0.1, 0.2,    // Rechtes Auge links
-    0.3, 0.2,    // Rechtes Auge rechts
-
-    // Nase
-    0.0, 0.0,    // Nase
-
-    // Mund (3 Vertices für eine einfache Kurve)
-    -0.2, -0.2,  // Linke Mundseite
-     0.0, -0.25, // Mittlere Mundseite (tiefer)
-     0.2, -0.2,  // Rechte Mundseite
-
-    // Weitere Details
-    -0.5, 0.5,   // Detail 1 (oberer Punkt links)
-     0.5, 0.5,   // Detail 2 (oberer Punkt rechts)
-    -0.4, 0.4,   // Detail 3 (linker Punkt oben)
-     0.4, 0.4,   // Detail 4 (rechter Punkt oben)
-    -0.3, 0.4,   // Detail 5 (linker Punkt)
-     0.3, 0.4    // Detail 6 (rechter Punkt)
+    0.0, 0.0,    // Spitze des Herzens
+    1.0, 1.0,    // Obere linke Rundung
+    2.0, 1.0,    // Obere rechte Rundung
+    3.0, 0.0,    // Rechte Spitze
+    2.0, -1.0,   // Untere rechte Spitze
+    0.0, -2.0,   // Untere Spitze
+    -2.0, -1.0,  // Untere linke Spitze
+    -3.0, 0.0,   // Linke Spitze
+    -2.0, 1.0,   // Obere linke Rundung
+    -1.0, 1.0    // Obere linke Rundung (kurve)
 ]);
 
 // WebGL-Setup
