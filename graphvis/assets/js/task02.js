@@ -3,45 +3,32 @@
 // Vertex-Daten für den Katzenkopf
 const vertices = new Float32Array([
     // Ohren
-    -0.6, 0.6,   // Linke Ohr-Spitze
-    -0.4, 0.9,   // Linke Ohr-Basis
-    -0.2, 0.6,   // Linke Ohr-Spitze
-    
-    0.6, 0.6,    // Rechte Ohr-Spitze
-    0.4, 0.9,    // Rechte Ohr-Basis
-    0.2, 0.6,    // Rechte Ohr-Spitze
-
-    // Kopf (Ellipse, grob durch Linien dargestellt)
-    -0.6, 0.0,   // Linke Seite des Kopfes
-     0.6, 0.0,   // Rechte Seite des Kopfes
-     0.4, -0.3,  // Rechts unten
-    -0.4, -0.3,  // Links unten
-     0.5, 0.4,   // Rechts oben
-    -0.5, 0.4,   // Links oben
-     0.0, 0.5,   // Obere Mitte des Kopfes
-
-    // Augen (2 Vertices pro Auge, 2 Augen)
-    -0.3, 0.2,   // Linkes Auge links
-    -0.1, 0.2,   // Linkes Auge rechts
-    0.1, 0.2,    // Rechtes Auge links
-    0.3, 0.2,    // Rechtes Auge rechts
-
-    // Nase
-    0.0, 0.0,    // Nase
-
-    // Mund (3 Vertices für eine einfache Kurve)
-    -0.2, -0.2,  // Linke Mundseite
-     0.0, -0.25, // Mittlere Mundseite (tiefer)
-     0.2, -0.2,  // Rechte Mundseite
-
-    // Weitere Details
-    -0.5, 0.5,   // Detail 1 (oberer Punkt links)
-     0.5, 0.5,   // Detail 2 (oberer Punkt rechts)
-    -0.4, 0.4,   // Detail 3 (linker Punkt oben)
-     0.4, 0.4,   // Detail 4 (rechter Punkt oben)
-    -0.3, 0.4,   // Detail 5 (linker Punkt)
-     0.3, 0.4    // Detail 6 (rechter Punkt)
-]);
+    -0.6, 0.6,  -0.4, 0.9,  -0.2, 0.6,  // Linkes Ohr
+    0.6, 0.6,   0.4, 0.9,   0.2, 0.6,  // Rechtes Ohr
+  
+    // Kopf (Ellipse, genauer)
+    -0.6, 0.0,  0.6, 0.0,  0.4, -0.3, -0.4, -0.3,  // Unterer Teil
+    0.5, 0.4,  -0.5, 0.4,  0.0, 0.5,  // Oberer Teil
+  
+    // Augen (oval)
+    -0.35, 0.25, -0.25, 0.25, -0.25, 0.15, -0.35, 0.15, // Linkes Auge
+    0.25, 0.25,  0.35, 0.25,  0.35, 0.15,  0.25, 0.15,  // Rechtes Auge
+  
+    // Nase (Dreieck)
+    0.0, 0.05,  -0.1, -0.05,  0.1, -0.05,
+  
+    // Mund (Kurve)
+    -0.2, -0.2,  0.0, -0.25,  0.2, -0.2,
+  
+    // Schnurrhaare (Beispiele)
+    -0.4, 0.1,  -0.5, 0.1,
+    0.4, 0.1,   0.5, 0.1,
+    // ... weitere Schnurrhaare
+  
+    // Körper (vereinfacht)
+    -0.8, -0.5,  -0.8, -1.0,  0.8, -1.0,  0.8, -0.5,  // Hauptkörper
+    // ... weitere Körperteile (z.B. Beine, Schwanz)
+  ]);
 
 // WebGL-Setup
 const canvas = document.getElementById('glCanvas');
