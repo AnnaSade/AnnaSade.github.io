@@ -1,19 +1,18 @@
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0; /* Entfernt Standardabstand */
+    margin: 0;
     padding: 0;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    justify-content: flex-start; /* Startet den Inhalt oben */
 }
 
 h1 {
     font-family: Arial, sans-serif;
     font-size: 24px;
-    margin-bottom: 30px; /* Kleineren Abstand zum Text */
+    margin: 20px 0 10px; /* Platz um die Überschrift */
 }
 
 .controls-description {
@@ -36,7 +35,7 @@ h1 {
     display: flex;
     justify-content: center; /* Horizontale Zentrierung */
     align-items: center; /* Vertikale Zentrierung im Container */
-    gap: 100px; /* Abstand zwischen den Animationen */
+    gap: 50px; /* Abstand zwischen den Animationen */
 }
 
 #rotatingWheel, #bouncingOrange {
