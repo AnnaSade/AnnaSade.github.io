@@ -1,6 +1,7 @@
 // START Aufgabe 2
 
-const vertices = new Float32Array([
+var vertices = new Float32Array([1, 1, -1, 1, -1, -1, 1, -1]);
+/*const vertices = new Float32Array([
     0.0, 0.0,    // Spitze des Herzens
     1.0, 1.0,    // Obere linke Rundung
     2.0, 1.0,    // Obere rechte Rundung
@@ -11,7 +12,7 @@ const vertices = new Float32Array([
     -3.0, 0.0,   // Linke Spitze
     -2.0, 1.0,   // Obere linke Rundung
     -1.0, 1.0    // Obere linke Rundung (kurve)
-]);
+]);*/
 
 // WebGL-Setup
 const canvas = document.getElementById('glCanvas');
