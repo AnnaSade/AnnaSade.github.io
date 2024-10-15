@@ -18,14 +18,14 @@ const vertices = new Float32Array([
     -5.0 * scale, 4.0 * scale,   // Vertex 11
     -9.0 * scale, 0.0 * scale,   // Vertex 12
     -2.0 * scale, -1.0 * scale,  // Vertex 13
-    -7.0 * scale, -0.5 * scale,  // Vertex 14
+    -7.0 * scale, -0.2857* scale,  // Vertex 14
     0.0 * scale, -4.0 * scale,   // Vertex 15
     5.0 * scale, -2.0 * scale,   // Vertex 16
     5.0 * scale, 2.0 * scale,    // Vertex 17
     2.0 * scale, 10.0 * scale,   // Vertex 18
     0.0 * scale, 11.0 * scale,   // Vertex 19
     -1.0 * scale, 10.0 * scale,  // Vertex 20
-    -2.0 * scale, -4.0 * scale,  // Vertex 21
+    -2.0 * scale, -2.9377 * scale,  // Vertex 21
     -5.0 * scale, -8.0 * scale,  // Vertex 22
     2.0 * scale, -8.0 * scale,   // Vertex 23
     3.0 * scale, -9.0 * scale,   // Vertex 24
