@@ -1,7 +1,7 @@
 // START Aufgabe 2
 
 // Skalierungsfaktor
-const scale = 0.3;
+const scale = 0.05;
 
 // Vertices für den Katzenkopf (in Paaren von x und y)
 const vertices = new Float32Array([
