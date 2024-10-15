@@ -5,13 +5,13 @@ const scale = 0.05;
 
 // Vertices für den Katzenkopf (in Paaren von x und y)
 const vertices = new Float32Array([
-    1.0 * scale, 7.0 * scale,    // Vertex 1
-    3.0 * scale, 9.0 * scale,    // Vertex 2
-    4.0 * scale, 12.0 * scale,   // Vertex 3
-    2.0 * scale, 14.0 * scale,   // Vertex 4
-    0.0 * scale, 14.0 * scale,   // Vertex 5
-    -2.0 * scale, 12.0 * scale,  // Vertex 6
-    -3.0 * scale, 8.0 * scale,   // Vertex 7
+    1.0 * scale, 9.0 * scale,    // Vertex 1
+    3.0 * scale, 11.0 * scale,    // Vertex 2
+    4.0 * scale, 14.0 * scale,   // Vertex 3
+    2.0 * scale, 16.0 * scale,   // Vertex 4
+    0.0 * scale, 16.0 * scale,   // Vertex 5
+    -2.0 * scale, 14.0 * scale,  // Vertex 6
+    -3.0 * scale, 10.0 * scale,   // Vertex 7
     2.0 * scale, 2.0 * scale,    // Vertex 8
     0.0 * scale, 1.0 * scale,    // Vertex 9
     -2.0 * scale, 3.0 * scale,   // Vertex 10
@@ -22,9 +22,9 @@ const vertices = new Float32Array([
     0.0 * scale, -4.0 * scale,   // Vertex 15
     5.0 * scale, -2.0 * scale,   // Vertex 16
     5.0 * scale, 2.0 * scale,    // Vertex 17
-    2.0 * scale, 10.0 * scale,   // Vertex 18
-    0.0 * scale, 11.0 * scale,   // Vertex 19
-    -1.0 * scale, 10.0 * scale,  // Vertex 20
+    2.0 * scale, 12.0 * scale,   // Vertex 18
+    0.0 * scale, 13.0 * scale,   // Vertex 19
+    -1.0 * scale, 12.0 * scale,  // Vertex 20
     -2.0 * scale, -2.9377 * scale,  // Vertex 21
     -5.0 * scale, -8.0 * scale,  // Vertex 22
     2.0 * scale, -8.0 * scale,   // Vertex 23
