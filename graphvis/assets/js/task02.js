@@ -1,18 +1,18 @@
 // START Aufgabe 2
+const scale = 0.3;  // Skalierungsfaktor
 
-var vertices = new Float32Array([1, 1, -1, 1, -1, -1, 1, -1]);
-/*const vertices = new Float32Array([
-    0.0, 0.0,    // Spitze des Herzens
-    1.0, 1.0,    // Obere linke Rundung
-    2.0, 1.0,    // Obere rechte Rundung
-    3.0, 0.0,    // Rechte Spitze
-    2.0, -1.0,   // Untere rechte Spitze
-    0.0, -2.0,   // Untere Spitze
-    -2.0, -1.0,  // Untere linke Spitze
-    -3.0, 0.0,   // Linke Spitze
-    -2.0, 1.0,   // Obere linke Rundung
-    -1.0, 1.0    // Obere linke Rundung (kurve)
-]);*/
+const vertices = new Float32Array([
+    0.0 * scale, 0.0 * scale,     // Spitze des Herzens
+    1.0 * scale, 1.0 * scale,     // Obere linke Rundung
+    2.0 * scale, 1.0 * scale,     // Obere rechte Rundung
+    3.0 * scale, 0.0 * scale,     // Rechte Spitze
+    2.0 * scale, -1.0 * scale,    // Untere rechte Spitze
+    0.0 * scale, -2.0 * scale,    // Untere Spitze
+    -2.0 * scale, -1.0 * scale,   // Untere linke Spitze
+    -3.0 * scale, 0.0 * scale,    // Linke Spitze
+    -2.0 * scale, 1.0 * scale,    // Obere linke Rundung
+    -1.0 * scale, 1.0 * scale     // Obere linke Rundung (kurve)
+]);
 
 // WebGL-Setup
 const canvas = document.getElementById('glCanvas');
