@@ -1,59 +1,65 @@
 // START Aufgabe 2
 
-
 const vertices = new Float32Array([
-    0.0, 0.5,   // 1
-    0.2, 0.8,   // 2
-    0.4, 0.5,   // 3
-    0.35, 0.4,  // 4
-    0.25, 0.4,  // 5
-    0.15, 0.4,  // 6
-    0.1, 0.3,   // 7
-    0.3, 0.3,   // 8
-    0.4, 0.1,   // 9
-    0.2, 0.1,   // 10
-    0.0, 0.1,   // 11
-    -0.1, 0.2,  // 12
-    -0.15, 0.4, // 13
-    -0.25, 0.4, // 14
-    -0.2, 0.3,  // 15
-    -0.3, 0.1,  // 16
-    -0.2, 0.0,  // 17
-    0.0, -0.1,  // 18
-    0.2, -0.1,  // 19
-    0.3, 0.0,   // 20
-    0.35, 0.1,  // 21
-    0.35, 0.3,  // 22
-    0.15, 0.0,  // 23
-    0.1, -0.1,  // 24
-    0.0, 0.0,   // 25
+    1, 7,    // Vertex 1
+    3, 9,    // Vertex 2
+    4, 12,   // Vertex 3
+    2, 14,   // Vertex 4
+    0, 14,   // Vertex 5
+    -2, 12,  // Vertex 6
+    -3, 8,   // Vertex 7
+    2, 2,    // Vertex 8
+    0, 1,    // Vertex 9
+    -2, 3,   // Vertex 10
+    -5, 4,   // Vertex 11
+    -9, 0,   // Vertex 12
+    -2, -1,  // Vertex 13
+    -7, -0.5, // Vertex 14
+    0, -4,   // Vertex 15
+    5, -2,   // Vertex 16
+    5, 2,    // Vertex 17
+    2, 10,   // Vertex 18
+    0, 11,   // Vertex 19
+    -1, 10,  // Vertex 20
+    -2, -4,  // Vertex 21
+    -5, -8,  // Vertex 22
+    2, -8,   // Vertex 23
+    3, -9,   // Vertex 24
+    0, -14,  // Vertex 25
+    1, -14   // Vertex 26
 ]);
-const lines = [
-    [0, 1],  // Linie von Punkt 1 zu Punkt 2
-    [1, 2],  // Linie von Punkt 2 zu Punkt 3
-    [2, 3],  // Linie von Punkt 3 zu Punkt 4
-    [3, 4],  // Linie von Punkt 4 zu Punkt 5
-    [5, 6],  // Linie von Punkt 5 zu Punkt 6
-    [6, 7],  // Linie von Punkt 6 zu Punkt 7
-    [7, 8],  // Linie von Punkt 7 zu Punkt 8
-    [8, 9],  // Linie von Punkt 8 zu Punkt 9
-    [9, 10], // Linie von Punkt 9 zu Punkt 10
-    [10, 11],// Linie von Punkt 10 zu Punkt 11
-    [11, 12],// Linie von Punkt 11 zu Punkt 12
-    [12, 13],// Linie von Punkt 12 zu Punkt 13
-    [13, 14],// Linie von Punkt 13 zu Punkt 14
-    [14, 15],// Linie von Punkt 14 zu Punkt 15
-    [15, 16],// Linie von Punkt 15 zu Punkt 16
-    [16, 17],// Linie von Punkt 16 zu Punkt 17
-    [17, 18],// Linie von Punkt 17 zu Punkt 18
-    [18, 19],// Linie von Punkt 18 zu Punkt 19
-    [19, 20],// Linie von Punkt 19 zu Punkt 20
-    [20, 21],// Linie von Punkt 20 zu Punkt 21
-    [21, 22],// Linie von Punkt 21 zu Punkt 22
-    [22, 23],// Linie von Punkt 22 zu Punkt 23
-    [23, 24],// Linie von Punkt 23 zu Punkt 24
-    [24, 25],// Linie von Punkt 24 zu Punkt 25
-];
+
+
+// Linien, die die Vertices verbinden
+const lines = new Uint16Array([
+    0, 1,    // Linie von Vertex 1 zu Vertex 2
+    1, 2,    // Linie von Vertex 2 zu Vertex 3
+    2, 3,    // Linie von Vertex 3 zu Vertex 4
+    3, 4,    // Linie von Vertex 4 zu Vertex 5
+    4, 5,    // Linie von Vertex 5 zu Vertex 6
+    5, 6,    // Linie von Vertex 6 zu Vertex 7
+    6, 7,    // Linie von Vertex 7 zu Vertex 8
+    7, 8,    // Linie von Vertex 8 zu Vertex 9
+    8, 9,    // Linie von Vertex 9 zu Vertex 10
+    9, 10,   // Linie von Vertex 10 zu Vertex 11
+    10, 11,  // Linie von Vertex 11 zu Vertex 12
+    11, 12,  // Linie von Vertex 12 zu Vertex 13
+    12, 8,   // Linie von Vertex 13 zu Vertex 9
+    13, 14,  // Linie von Vertex 14 zu Vertex 15
+    14, 15,  // Linie von Vertex 15 zu Vertex 16
+    15, 16,  // Linie von Vertex 16 zu Vertex 17
+    16, 19,  // Linie von Vertex 17 zu Vertex 20
+    19, 18,  // Linie von Vertex 20 zu Vertex 19
+    18, 17,  // Linie von Vertex 19 zu Vertex 18
+    17, 0,   // Linie von Vertex 18 zu Vertex 1
+    13, 20,  // Linie von Vertex 14 zu Vertex 21
+    20, 21,  // Linie von Vertex 21 zu Vertex 22
+    21, 22,  // Linie von Vertex 22 zu Vertex 23
+    22, 23,  // Linie von Vertex 23 zu Vertex 24
+    14, 24,  // Linie von Vertex 15 zu Vertex 25
+    24, 25   // Linie von Vertex 25 zu Vertex 26
+]);
+
 
 /*
 const scale = 0.3;  // Skalierungsfaktor
