@@ -1,4 +1,34 @@
 // START Aufgabe 2
+
+
+const vertices = new Float32Array([
+    // Geben Sie hier die Vertices in der Reihenfolge der Linien an
+    1.0, 0.8,    // 1
+    1.4, 0.6,    // 2
+    0.7, 0.3,    // 3
+    0.5, 0.7,    // 4
+    0.3, 0.9,    // 5
+    0.2, 0.5,    // 6
+    0.5, 0.4,    // 7
+    0.4, 0.3,    // 8
+    0.4, 0.5,    // 9
+    0.3, 0.6,    // 10
+    0.1, 0.6,    // 11
+    -0.1, 0.5,   // 12
+    0.0, 0.4,    // 13
+    -0.5, 0.3,   // 14
+    -0.8, 0.5,   // 15
+    -0.7, 0.1,   // 16
+    -0.4, -0.1,  // 17
+    -0.5, -0.3,  // 18
+    -0.8, -0.4,  // 19
+    -0.5, -0.7,  // 20
+    -0.3, -0.6,  // 21
+    -0.2, -0.8,  // 22
+    0.1, -0.6,   // 23
+    0.3, -0.8    // 24
+]);
+/*
 const scale = 0.3;  // Skalierungsfaktor
 
 const vertices = new Float32Array([
@@ -12,7 +42,7 @@ const vertices = new Float32Array([
     -3.0 * scale, 0.0 * scale,    // Linke Spitze
     -2.0 * scale, 1.0 * scale,    // Obere linke Rundung
     -1.0 * scale, 1.0 * scale     // Obere linke Rundung (kurve)
-]);
+]);*/
 
 // WebGL-Setup
 const canvas = document.getElementById('glCanvas');
